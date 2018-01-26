@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Supermercado One', cursive;
+    background-image: url(../img/background.jpg);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: cadetblue;
+    border-radius: 4px;
+    font-family: 'Supermercado One', cursive;
+    border: 2px solid cadetblue;
+    font-size: 1.5em;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fff;
+    color: cadetblue;
+}
+
+.pillow {
+    width: 33.33%;
+    overflow: hidden;
+    position: relative;
+}
+
+.cat {
+    background-image: url(../img/cat.png);
+    background-position: center;
+    background-size: 55%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    transition: all 0.4s;
+}
+
+.pillow::after {
+    content: "";
+    position: absolute;
+    height: 140px;
+    width: 100%;
+    bottom: -40px;
+    left: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+    background-image: url(../img/pillow.png);
+}
+
+.pillow.up .cat {
+    top: 0;
+}
+
+.score {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
